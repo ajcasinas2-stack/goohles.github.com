@@ -1,1 +1,238 @@
 # goohles.github.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aj Casinas | Personal Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+nav h1 {
+    color: #38bdf8;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero img {
+    width: 130px;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.hero p {
+    color: #cbd5f5;
+    margin-top: 10px;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #38bdf8;
+    color: black;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* SECTION */
+.section {
+    padding: 60px 40px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.1);
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+input, textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #38bdf8;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    color: #94a3b8;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>AjSite</h1>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+    <img src="Ajjjj.jpeg" alt="ajjjj">
+    <h2>Hi, I'm <span>Aj Casinas</span></h2>
+    <p>Student | Future Web Developer</p>
+    <button class="btn" onclick="welcome()">Click Me</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section fade">
+    <h2>About Me</h2>
+    <p style="text-align:center;">
+        I am a passionate student who loves technology, coding, and creating websites.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section fade">
+    <h2>My Skills</h2>
+
+    <div class="cards">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Editing</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact fade">
+    <h2>Contact Me</h2>
+
+    <input type="text" id="name" placeholder="Your Name"><br>
+    <textarea id="msg" placeholder="Message"></textarea><br>
+    <button onclick="send()">Send Message</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Aj Casinas Website
+</footer>
+
+<script>
+// WELCOME BUTTON
+function welcome() {
+    alert("Welcome to my website 🚀");
+}
+
+// CONTACT
+function send() {
+    let name = document.getElementById("name").value;
+
+    if(name === "") {
+        alert("Please enter your name!");
+    } else {
+        alert("Thanks " + name + "! Message sent.");
+    }
+}
+
+// SCROLL ANIMATION
+const fades = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+    fades.forEach(el => {
+        let top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50) {
+            el.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
